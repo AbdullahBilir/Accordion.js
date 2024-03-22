@@ -7,17 +7,19 @@ function cardRender() {
   data.forEach((eleman) => {
     let cardTemplate = `
        <div class="accordion">
-         <div class="text-container">
-          <h4>
-            ${eleman.title}  
-          </h4>
-          <button class="button">
-          <i class="${icon}"></i>
-          </button>
-          </div>
-          <p class="text" >
-          ${eleman.description}
-          </p>
+            <div class="text-container">
+              <h4>
+                ${eleman.title}  
+              </h4>
+              <button class="button">
+              <i class="${icon}"></i>
+              </button>
+              </div>
+              <p class="text" >
+              ${eleman.description}
+              </p>
+            <div/>
+            <hr/>
        </div> 
        `;
 
@@ -32,7 +34,7 @@ const accordion = document.querySelectorAll(".accordion");
 accordion.forEach((item) => {
   item.querySelector(".button").addEventListener("click", () => {
     item.querySelector(".text").classList.toggle("active");
-
+    item.querySelector("button").classList.toggle("active-color");
     if (item.querySelector(".text").classList.contains("active")) {
       item.querySelector("i").className = "fa-solid fa-minus";
     } else {
